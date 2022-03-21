@@ -102,7 +102,7 @@ function removeGroceryItem(groceryItem) {
     } else {
         groceryItems = JSON.parse(localStorage.getItem('groceryItems'));
     }
-    const index = groceryItems.indexOf(groceryItem.toLowerCase(), 0);
+    const index = groceryItems.indexOf(groceryItem, 0);
     groceryItems.splice(index, 1);
     localStorage.setItem("groceryItems", JSON.stringify(groceryItems));
 }

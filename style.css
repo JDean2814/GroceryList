@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --clr-light: #A2B5EE;
+    --clr-dark: #29396B;
+    --clr-prim: #6188FF;
+    --fw-normal: 400;
+    --fw-bold: 700;
+    --fw-black: 900;
+}
+
+body {
+    background-color: var(--clr-light);
+}
+
+h1 {
+    color: var(--clr-light);
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+header,
+#input-section {
+    background-color: var(--clr-dark);
+    width: 80%;
+    margin: 1rem auto;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+header {
+    padding: .75em 0;
+}
+
+#input-section {
+    padding: 1em 0;
+}
+
+#input-section div {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+#input-section label {
+    color: var(--clr-light);
+    font-family: sans-serif;
+    font-weight: var(--fw-bold);
+}
+
+#input-section button {
+    background-color: var(--clr-prim);
+    font-weight: var(--fw-bold);
+    color: var(--clr-dark);
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 2em;
+    height: auto;
+}
+
+#input-section button:hover {
+    background-color: var(--clr-light) !important;
+}
+
+#input-section input {
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: 2em;
+    text-indent: 5px;
+}
+
+#input-section input:focus {
+    outline: none;
+}
+
+.item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.5rem;
+    background-color: white;
+    border-radius: 5px;
+    width: 80%;
+    margin: .5em auto; 
+}
+
+.item-container p {
+    margin-left: 1em;
+    text-transform: capitalize;
+    font-family: sans-serif;
+    font-weight: var(--fw-bold);
+    color: var(--clr-dark);
+}
+
+.item-container button {
+    height: 100%;
+    border: none;
+    color: white;
+    background-color: red;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 2em;
+}
+
+@media only screen and (min-width: 800px) {
+    header, 
+    #input-section,
+    .item-container {
+        width: 50%;
+    }
+}

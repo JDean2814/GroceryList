@@ -21,7 +21,7 @@ addItemButton.onclick = function() {
         deleteButton.classList.add('delete-button');
         checkButton.classList.add('check-button');
         item.innerText = userInput.value;
-        saveLocalStorage(userInput.value);
+        saveLocalStorage(userInput.value.toLowerCase());
         checkButton.innerText = '-'
         deleteButton.innerText = 'X';
         groceryList.appendChild(itemContain);
@@ -32,7 +32,7 @@ addItemButton.onclick = function() {
         userInput.value = "";
             
         deleteButton.onclick = function() {
-            const groceryItem = item.innerText;
+            const groceryItem = item.innerText.toLowerCase();
             removeGroceryItem(groceryItem);
             groceryList.removeChild(itemContain);
         }
@@ -84,7 +84,7 @@ function loadLocalStorage() {
         buttonDiv.appendChild(deleteButton);
 
         deleteButton.onclick = function() {
-            const groceryItem = item.innerText;
+            const groceryItem = item.innerText.toLowerCase();
             removeGroceryItem(groceryItem);
             groceryList.removeChild(itemContain);
         }

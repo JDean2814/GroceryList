@@ -7,6 +7,8 @@
     --clr-light: #A2B5EE;
     --clr-dark: #29396B;
     --clr-prim: #6188FF;
+    --clr-red: #FA0400;
+    --clr-green: #3A7A43;
     --fw-normal: 400;
     --fw-bold: 700;
     --fw-black: 900;
@@ -19,6 +21,7 @@ body {
 h1 {
     color: var(--clr-light);
     font-family: sans-serif;
+    font-size: 2.5em;
     text-transform: uppercase;
 }
 
@@ -29,7 +32,7 @@ button:hover {
 header,
 #input-section {
     background-color: var(--clr-dark);
-    width: 80%;
+    width: 90%;
     margin: 1rem auto;
     text-align: center;
     border-radius: 10px;
@@ -48,35 +51,40 @@ header {
     display: flex;
     justify-content: center;
     margin-top: 1em;
+    margin-bottom: .5em;
 }
 
 #input-section label {
     color: var(--clr-light);
     font-family: sans-serif;
     font-weight: var(--fw-bold);
+    font-size: 1.5em;
 }
 
-#input-section button {
+#add-button {
     background-color: var(--clr-prim);
     font-weight: var(--fw-bold);
+    font-size: 1em;
     color: var(--clr-dark);
     border: none;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    width: 2em;
+    width: 2.5em;
     height: auto;
 }
 
-#input-section button:hover {
+#add-button:hover {
     background-color: var(--clr-light) !important;
 }
 
 #input-section input {
+    width: 60%;
     border: none;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    height: 2em;
+    height: 2.5em;
     text-indent: 5px;
+    font-size: auto;
 }
 
 #input-section input:focus {
@@ -87,10 +95,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 1.5rem;
+    height: 2rem;
     background-color: white;
     border-radius: 5px;
-    width: 80%;
+    width: 90%;
     margin: .5em auto; 
 }
 
@@ -99,23 +107,40 @@ header {
     text-transform: capitalize;
     font-family: sans-serif;
     font-weight: var(--fw-bold);
+    font-size: 1.25em;
     color: var(--clr-dark);
 }
 
-.item-container button {
+.item-container div {
+    height: 100%;
+}
+
+.check-button {
     height: 100%;
     border: none;
     color: white;
-    background-color: red;
+    background-color: var(--clr-green);
+    width: 2.5em;
+}
+
+.line {
+    text-decoration: line-through;
+}
+
+.delete-button {
+    height: 100%;
+    border: none;
+    color: white;
+    background-color: var(--clr-red);
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    width: 2em;
+    width: 2.5em;
 }
 
 @media only screen and (min-width: 800px) {
     header, 
     #input-section,
     .item-container {
-        width: 50%;
+        width: 60%;
     }
 }

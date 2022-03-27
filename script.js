@@ -1,6 +1,7 @@
 let addItemButton = document.getElementById('add-button');
 let userInput = document.getElementById('list-input');
 let groceryList = document.getElementById('grocery-list');
+let clearButton = document.getElementById('clear-button')
 
 document.addEventListener('DOMContentLoaded', loadLocalStorage);
 
@@ -34,6 +35,24 @@ function createGroceryItem(groceryItem) {
     }
 }
 
+userInput.addEventListener("keyup", function(event) {
+    if (event.code === 'Enter') {
+        if (userInput.value === "") {
+            userInput.style.outline = '2px solid red';
+            addItemButton.style.borderLeft = '3px solid red'
+            window.alert("Please enter item into the input.")
+        } else {
+            let groceryItem = userInput.value;
+            createGroceryItem(groceryItem);
+    
+            saveLocalStorage(userInput.value.toLowerCase());
+            userInput.value = "";
+            
+            userInput.style.outline = '';
+            addItemButton.style.borderLeft = ''
+        }
+    }
+})
 
 addItemButton.onclick = function() {
     if (userInput.value === "") {
@@ -49,6 +68,13 @@ addItemButton.onclick = function() {
         
         userInput.style.outline = '';
         addItemButton.style.borderLeft = ''
+    }
+}
+
+clearButton.onclick = function() {
+    localStorage.clear();
+    while (groceryList.hasChildNodes()) {
+        groceryList.removeChild(groceryList.firstChild);
     }
 }
 

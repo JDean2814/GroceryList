@@ -52,44 +52,31 @@ addItemButton.onclick = function() {
     }
 }
 
-function checkLocalStorage(groceryItemsArray) {
+function checkLocalStorage() {
+    let arr;
     if(localStorage.getItem('groceryItemsArray') === null) {
-        groceryItemsArray = [];
+        arr = [];
     } else {
-        groceryItemsArray = JSON.parse(localStorage.getItem('groceryItemsArray'));
-    }   
+        arr = JSON.parse(localStorage.getItem('groceryItemsArray'));
+    }
+    return arr;   
 }
 
 function saveLocalStorage(item) {
-    let groceryItems;
-    if(localStorage.getItem('groceryItemsArray') === null) {
-        groceryItems = [];
-    } else {
-        groceryItems = JSON.parse(localStorage.getItem('groceryItemsArray'));
-    }
-    groceryItems.push(item);
-    localStorage.setItem('groceryItemsArray', JSON.stringify(groceryItems))
+    let groceryItemsArray = checkLocalStorage();
+    groceryItemsArray.push(item);
+    localStorage.setItem('groceryItemsArray', JSON.stringify(groceryItemsArray))
 }
 
 function loadLocalStorage() {
-    let groceryItems;
-    if(localStorage.getItem('groceryItemsArray') === null) {
-        groceryItems = [];
-    } else {
-        groceryItems = JSON.parse(localStorage.getItem('groceryItemsArray'));
-    }
-    groceryItems.forEach(function(groceryItem) { 
+    let groceryItemsArray = checkLocalStorage();
+    groceryItemsArray.forEach(function(groceryItem) { 
         createGroceryItem(groceryItem);
     });
 }
 
 function removeGroceryItem(groceryItem) {
-    let groceryItemsArray;
-    if(localStorage.getItem('groceryItemsArray') === null) {
-        groceryItemsArray = [];
-    } else {
-        groceryItemsArray = JSON.parse(localStorage.getItem('groceryItemsArray'));
-    }
+    let groceryItemsArray = checkLocalStorage();
     const index = groceryItemsArray.indexOf(groceryItem, 0);
     groceryItemsArray.splice(index, 1);
     localStorage.setItem("groceryItemsArray", JSON.stringify(groceryItemsArray));

@@ -8,8 +8,6 @@ This project was made using Javascript, HTML, and CSS. This Grocery List web app
 
 ## Authors
 
-Contributors names and contact info
-
 Jordan Dean
 jdean2814@gmail.com
 

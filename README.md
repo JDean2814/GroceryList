@@ -1,4 +1,4 @@
-# Project Title
+# Grocery List App
 
 Grocery List web application helps you make a grocery list. 
 
